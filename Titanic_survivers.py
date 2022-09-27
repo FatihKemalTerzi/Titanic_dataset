@@ -71,3 +71,12 @@ for col in num_cols:
     num_summary(df, col, plot=True)
 
 ##################################
+# NUMERİK DEĞİŞKENLERİN TARGET GÖRE ANALİZİ
+##################################
+
+def target_summary_with_num(dataframe, target, numerical_col):
+    print(dataframe.groupby(target).agg({numerical_col: "mean"}), end="\n\n\n")
+
+
+for col in num_cols:
+    target_summary_with_num(df, "survived", col)
